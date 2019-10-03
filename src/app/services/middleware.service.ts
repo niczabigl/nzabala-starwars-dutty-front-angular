@@ -16,7 +16,7 @@ export class MiddlewareService implements HttpInterceptor {
 
   // if there are any issue about credential to production, we can add to all request new headers os something we need to call our API
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('intercept', req)
+    console.log('interceptando peticion ->', req)
     let shieldedUrl = req.url.includes(AppConfig.API_ENDPOINT)
     if (shieldedUrl) {
       let lastServerCallCache = this.cacheService.Get('lastServerCallCache')
@@ -27,7 +27,7 @@ export class MiddlewareService implements HttpInterceptor {
         this.cacheService.Add('lastServerCallCache', nowDateNumber.toString())
         return next.handle(req)
       } else { // conseguir de la cache la instancia de la última petición al servidor "configurado por url" y calcular el tiempo de transcurso
-        const timeToNextCall = 3
+        const timeToNextCall = 300
         let nowDate = new Date()
         let nowDateNumber = nowDate.getTime() / 1000
         if ((nowDateNumber - Number(lastServerCallCache)) > timeToNextCall) {
