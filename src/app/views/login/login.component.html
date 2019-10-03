@@ -1,0 +1,33 @@
+<mat-card class="login-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-subtitle>Login Form</mat-card-subtitle>
+  </mat-card-header>
+  <div class="full-width">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <p>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input class="form-control" required minlenght="4" matInput formControlName="username">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input class="form-control" required minlenght="4" matInput formControlName="password">
+        </mat-form-field>
+      </p>
+      <mat-toolbar-row>
+        <span class="example-spacer"></span>
+        <button type="submit" class="submit-button" mat-raised-button color="accent">Log In</button>
+      </mat-toolbar-row>
+    </form>
+    <mat-toolbar-row>
+      <small>Do not have account?</small>
+      <span class="example-spacer"></span>
+      <button mat-raised-button routerLink="/register">Register</button>
+    </mat-toolbar-row>
+
+  </div>
+</mat-card>

@@ -1,0 +1,45 @@
+<div>
+  <h1>StarShips administration</h1>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
+      <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      </ng-container>
+
+      <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+          <div (click)="getStarshipDetail(
+            {
+              name: element.name, 
+              model: element.model, 
+              starship_class: element.starship_class, 
+              manufacturer: element.manufacturer, 
+              created_at: element.created, 
+              edited_at : element.edited, 
+              url: element.url,
+              passengers: element.passengers,
+              crew: element.crew,
+              consumables: element.consumables
+            })" class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <div class="example-element-diagram">
+              <div class="example-element-name"> {{element.name}} </div>
+              <div class="example-element-model"> {{element.model}} </div>
+              <div class="example-element-starship_class"> {{element.starship_class}} </div>
+              <div class="example-element-manufacturer"> {{element.manufacturer}} </div>
+              <div class="example-element-passengers"> {{element.passengers}} </div>
+              <div class="example-element-consumables"> {{element.consumables}} </div>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = element">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10]"></mat-paginator>
+  </div>
+</div>

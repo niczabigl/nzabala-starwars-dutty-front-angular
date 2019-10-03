@@ -1,0 +1,54 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{data.model}}</mat-card-title>
+    <mat-card-subtitle>{{data.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{data.url}}" alt="{{data.name}}">
+  <mat-card-content>
+      <table *ngIf="selectedStarship">
+          <tr>
+            <td>
+              <mat-label><strong>name:</strong></mat-label>
+              <div>{{data.name}}</div>
+            </td>
+            <td>
+              <mat-label><strong>manufacturer:</strong></mat-label>
+              <div>{{data.manufacturer}}</div>
+            </td>
+            <td>
+              <mat-label><strong>starship </strong>class:</mat-label>
+              <div>{{data.starship_class}}</div>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                <mat-label><strong>consumables:</strong></mat-label>
+                <div>{{data.consumables}}</div>
+              </td>
+              <td>
+                <mat-label><strong>crew:</strong></mat-label>
+                <div>{{data.crew}}</div>
+              </td>
+              <td>
+                <mat-label><strong>passengers:</strong></mat-label>
+                <div>{{data.passengers}}</div>
+              </td>
+            </tr>
+          <tr>
+            <td>
+              <mat-label><strong>Created </strong>at:</mat-label>
+              <div>{{data.created_at}}</div>
+            </td>
+            <td>
+              <mat-label><strong>edited </strong>at:</mat-label>
+              <div>{{data.edited_at}}</div>
+            </td>
+          </tr>
+        
+        </table>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="onNoClick()">Close</button>
+  </mat-card-actions>
+</mat-card>

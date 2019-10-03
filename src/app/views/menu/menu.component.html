@@ -1,0 +1,28 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="ships-header-image"></div>
+    </mat-card-header>
+    <mat-card-title>	Gestión de Naves </mat-card-title>
+    <mat-card-subtitle>	Filtra Naves </mat-card-subtitle>
+    <mat-card-content>	
+      <p>Accede para poder administrar todas las Naves</p>    
+    </mat-card-content>
+    <img mat-card-image src="https://www.wallpaperup.com/uploads/wallpapers/2012/09/07/13009/f4a617c9e2339c1c70f325eb69f74487-700.jpg">
+    <mat-card-actions><button disabled="{{!isUserLogin}}" routerLink="/ships" mat-raised-button color="primary">GESTIÓN NAVES</button></mat-card-actions>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="monster-header-image"></div>
+    </mat-card-header>
+    <mat-card-title>	Gestión de Monstruos </mat-card-title>
+    <mat-card-subtitle>	Filtrar Monstruos </mat-card-subtitle>
+    <mat-card-content>	
+      <p>Accede para poder administrar los Monstruos espaciales</p>    
+    </mat-card-content>
+    <img mat-card-image src="https://i.pinimg.com/originals/57/5f/8e/575f8e17c6cddfacac7a59cb4cb14acd.jpg">
+    <mat-card-actions><button disabled="{{!isUserLogin}}" routerLink="/monsters" mat-raised-button color="primary">GESTIÓN MONSTRUOS</button></mat-card-actions>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+</div>

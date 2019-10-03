@@ -1,0 +1,74 @@
+table {
+    margin: auto;
+    min-width: 50%;
+    width: 100%;
+  }
+
+
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: #f5f5f5;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: inline-flex;
+    margin: 8px 0;
+  }
+  
+  .example-element-diagram {
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+  }
+  .example-element-diagram > div {
+    padding: 5px;
+  }
+  
+  .example-element-name {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+  .example-container > * {
+    width: 100%;
+  }
+
+  .buton-container{
+      padding: 15px;
+  }
+
+  .buton-container button{
+      margin: 10px;
+  }
+  .example-element-diagram {
+    margin: 15px;
+  }
+  .example-element-diagram:hover {
+    cursor:pointer;
+    background: #673ab7;
+    color: white;
+    -webkit-box-shadow: 9px 10px 25px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 10px 25px -15px rgba(0,0,0,0.75);
+    box-shadow: 9px 10px 25px -15px rgba(0,0,0,0.75);
+  }

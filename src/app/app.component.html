@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  <span class="title" routerLink="/menu">STAR - WARS MANAGER</span>  
+  <span class="example-spacer"></span>
+  <button mat-raised-button routerLink="/register">Register</button>
+  <span class="mid-spacer"></span>
+  <button routerLink="/login" class="loggin" mat-raised-button color="accent"><span>Log in</span></button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="content-container">
+  <router-outlet></router-outlet>
+  <app-notifications></app-notifications>
+  <app-dialog></app-dialog>
+</div>
