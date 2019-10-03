@@ -34,7 +34,6 @@ export class MonstersComponent implements OnInit {
     this.monstersService.getMonstersDataPage('1').subscribe(
       (data:any) =>
       {
-        console.log('DATA', data)
         this.fullDataSource = new MatTableDataSource(data.results)
         this.dataSource = this.fullDataSource
       }
