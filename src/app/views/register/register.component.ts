@@ -38,6 +38,7 @@ export class RegisterComponent implements OnInit {
   onSubmit (values) {
     let res = this.authService.Register(values, (res) => {
       if(res.success) {
+        this.pubSub.emit('showSnackbar', `Username ${values.username} registered !`, NotificacionType.SUCCESS )
         this.router.navigateByUrl('/login');
       } else {
         this.pubSub.emit('showSnackbar', res.message , NotificacionType.ERROR)

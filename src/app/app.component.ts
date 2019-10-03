@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     // in RootControler, we have a watcher to detect everytime router-link change, to do some needed stuff
     this.router.events.subscribe((val) => {
       if(val instanceof NavigationStart) {
-        console.log(val)
+        // console.log(val)
       }
     })
   }

@@ -32,7 +32,7 @@ export class UserService {
 
   GetByUserName(username) : Observable<User> {
     let users = this.getUsers()
-    users.filter(u => u.username = username)
+    users = users.filter(u => u.username === username)
     return of(users.length ? users[0] : null)
   }
 
